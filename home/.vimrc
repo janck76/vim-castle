@@ -49,6 +49,8 @@ Plugin 'ZoomWin'
 " CSApprox - Makes GVim-only colorschemes Just Work in terminal Vim
 " Plugin 'CSApprox'
 
+" Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more.  The plugin provides mappings to easily delete, change and add such surroundings in pairs
+Plugin 'Surround.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

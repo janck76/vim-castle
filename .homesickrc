@@ -1,0 +1,26 @@
+require 'fileutils'
+
+def vundle
+    vundle_dir=File.expand_path("~/.vim/bundle/Vundle.vim")
+    if ! File.directory?(vundle_dir)
+        puts "create dir"
+        begin
+            FileUtils.mkdir_p(vundle_dir)
+        rescue Exception => e
+            puts e.message
+            puts e.backtrace.inspect
+            exit 1
+        end
+    end
+  
+    if ! File.directory?("#{vundle_dir}/.git")
+        if system "git clone https://github.com/gmarik/Vundle.vim.git #{vundle_dir}"
+            system "vim +PluginInstall +qall"
+        end
+    else
+        system "vim +PluginUpdate +qall"
+    end
+end
+
+vundle
+
