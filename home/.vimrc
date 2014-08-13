@@ -52,6 +52,12 @@ Plugin 'ZoomWin'
 " Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more.  The plugin provides mappings to easily delete, change and add such surroundings in pairs
 Plugin 'Surround.vim'
 
+" SingleCompile : Make it more convenient to compile or run a single source file. 
+Plugin 'xuhdev/SingleCompile'
+
+" ruby-vim
+Plugin 'vim-ruby/vim-ruby'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -151,6 +157,9 @@ if has("autocmd")
     \ endif
 
   augroup END
+  
+  " Compiler plugins
+  autocmd FileType ruby compiler ruby
 
 else
 
@@ -368,3 +377,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" SingleCompile settings
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
+let g:SingleCompile_showquickfixiferror = 1
+let g:SingleCompile_silentcompileifshowquickfix = 1
+let g:SingleCompile_showresultafterrun = 0
+
