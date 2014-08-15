@@ -367,7 +367,8 @@ let g:pymode_quickfix_maxheight = 6
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 " Funker kun i gvim av en eller annen grunn...
-let g:UltiSnipsListSnippets="<tab-c>"
+"let g:UltiSnipsListSnippets="<tab-c>"
+let g:UltiSnipsListSnippets="<F3>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
