@@ -338,7 +338,7 @@ nnoremap <C-p> :bprevious<CR>
 
 " Change leader from deafult \ to ,
 let mapleader=","
-
+" noremap \ ,
 
 " Python-mode settings 
 " Turn on the whole plugin
