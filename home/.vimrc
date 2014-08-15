@@ -272,12 +272,6 @@ if &diff
     noremap <C-L> :diffupdate<CR><C-L>
 endif
 
-
-" let g:UltiSnipsJumpForwardTrigger="<c-q>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-w>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
@@ -372,8 +366,10 @@ let g:pymode_quickfix_maxheight = 6
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" Funker kun i gvim av en eller annen grunn...
+let g:UltiSnipsListSnippets="<tab-c>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
