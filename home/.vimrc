@@ -58,6 +58,15 @@ Plugin 'xuhdev/SingleCompile'
 " ruby-vim
 Plugin 'vim-ruby/vim-ruby'
 
+" xmledit
+" Plugin 'sukima/xmledit'
+
+" Git plugin
+Plugin 'tpope/vim-fugitive'
+
+" vim-bufsurf
+Plugin 'ton/vim-bufsurf'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -161,6 +170,13 @@ if has("autocmd")
   " Compiler plugins
   autocmd FileType ruby compiler ruby
 
+  " Tab-stops for ruby
+  autocmd FileType ruby setlocal tabstop=2
+  autocmd FileType ruby setlocal shiftwidth=2
+
+  " XML-folding
+  let g:xml_syntax_folding=1
+  au FileType xml setlocal foldmethod=syntax
 else
 
   set autoindent		" always set autoindenting on
