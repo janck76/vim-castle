@@ -353,6 +353,7 @@ nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 nmap <silent> <leader>b :BufSurfBack<CR>
 nmap <silent> <leader>f :BufSurfForward<CR>
+nmap <silent> <leader>, :b#<CR>
 
 " Cycle through buffers
 " nnoremap <Tab> :bnext<CR>
