@@ -101,6 +101,10 @@ filetype plugin indent on    " required
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" Change leader from deafult \ to ,
+let mapleader=","
+"noremap \ ,
+
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
@@ -245,6 +249,7 @@ nmap <s-tab> ^i<bs><esc>
 :set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 :set laststatus=2
 
+
 " Toggle menu and toolbar
 map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
     \set guioptions-=T <Bar>
@@ -346,15 +351,14 @@ let g:airline_symbols.space = "\ua0"
 " Cycle through buffers
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
+nnoremap <leader>b :BufSurfBack<CR>
+nnoremap <leader>f :BufSurfForward<CR>
 
 " Cycle through buffers
 " nnoremap <Tab> :bnext<CR>
 " nnoremap <S-Tab> :bprevious<CR>
 
 
-" Change leader from deafult \ to ,
-let mapleader=","
-" noremap \ ,
 
 " Python-mode settings 
 " Turn on the whole plugin
