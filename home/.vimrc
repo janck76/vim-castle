@@ -351,8 +351,8 @@ let g:airline_symbols.space = "\ua0"
 " Cycle through buffers
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
-nnoremap <leader>b :BufSurfBack<CR>
-nnoremap <leader>f :BufSurfForward<CR>
+nmap <silent> <leader>b :BufSurfBack<CR>
+nmap <silent> <leader>f :BufSurfForward<CR>
 
 " Cycle through buffers
 " nnoremap <Tab> :bnext<CR>
