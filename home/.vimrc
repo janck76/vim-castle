@@ -102,8 +102,8 @@ filetype plugin indent on    " required
 set backspace=indent,eol,start
 
 " Change leader from deafult \ to ,
-let mapleader=","
-noremap \ ,
+let mapleader="-"
+"noremap \ ,
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -353,7 +353,7 @@ nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 nmap <silent> <leader>b :BufSurfBack<CR>
 nmap <silent> <leader>f :BufSurfForward<CR>
-nmap <silent> <leader>, :b#<CR>
+nmap <silent> <leader>- :b#<CR>
 
 " Cycle through buffers
 " nnoremap <Tab> :bnext<CR>
