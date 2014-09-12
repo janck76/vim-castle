@@ -67,6 +67,10 @@ Plugin 'tpope/vim-fugitive'
 " vim-bufsurf
 Plugin 'ton/vim-bufsurf'
 
+" vim-xkbswitch 
+" Dependency: xkb-switch
+Plugin 'lyokha/vim-xkbswitch'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
