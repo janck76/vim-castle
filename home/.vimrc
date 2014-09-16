@@ -69,7 +69,7 @@ Plugin 'ton/vim-bufsurf'
 
 " vim-xkbswitch 
 " Dependency: xkb-switch
-Plugin 'lyokha/vim-xkbswitch'
+" Plugin 'lyokha/vim-xkbswitch'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -106,8 +106,9 @@ filetype plugin indent on    " required
 set backspace=indent,eol,start
 
 " Change leader from deafult \ to ,
-let mapleader="-"
-"noremap \ ,
+let mapleader=","
+noremap ø ;
+noremap Ø ,
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -356,8 +357,8 @@ let g:airline_symbols.space = "\ua0"
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 nmap <silent> <leader>b :BufSurfBack<CR>
-nmap <silent> <leader>f :BufSurfForward<CR>
-nmap <silent> <leader>- :b#<CR>
+nmap <silent> <leader>B :BufSurfForward<CR>
+nmap <silent> <leader>, :b#<CR>
 
 " Cycle through buffers
 " nnoremap <Tab> :bnext<CR>
