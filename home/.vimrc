@@ -105,6 +105,8 @@ filetype plugin indent on    " required
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+set number
+
 " Change leader from deafult \ to ,
 let mapleader=","
 noremap ø ;
@@ -184,8 +186,8 @@ if has("autocmd")
   autocmd FileType ruby setlocal shiftwidth=2
 
   " XML-folding
-  let g:xml_syntax_folding=1
-  au FileType xml setlocal foldmethod=syntax
+  " let g:xml_syntax_folding=1
+  " au FileType xml setlocal foldmethod=syntax
 else
 
   set autoindent		" always set autoindenting on
