@@ -67,6 +67,9 @@ Plugin 'tpope/vim-fugitive'
 " vim-bufsurf
 Plugin 'ton/vim-bufsurf'
 
+" Comment out stuff
+Plugin 'tpope/vim-commentary'
+
 " vim-xkbswitch 
 " Dependency: xkb-switch
 " Plugin 'lyokha/vim-xkbswitch'
@@ -105,6 +108,12 @@ filetype plugin indent on    " required
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+set number
+
+" zsh lignende autocomplete
+set wildmenu
+set wildmode=full
+
 " Change leader from deafult \ to ,
 let mapleader=","
 noremap ø ;
@@ -115,7 +124,7 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
+set history=200		" keep 200 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -184,8 +193,8 @@ if has("autocmd")
   autocmd FileType ruby setlocal shiftwidth=2
 
   " XML-folding
-  let g:xml_syntax_folding=1
-  au FileType xml setlocal foldmethod=syntax
+  " let g:xml_syntax_folding=1
+  " au FileType xml setlocal foldmethod=syntax
 else
 
   set autoindent		" always set autoindenting on
@@ -357,8 +366,8 @@ let g:airline_symbols.space = "\ua0"
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 nmap <silent> <leader>b :BufSurfBack<CR>
-nmap <silent> <leader>f :BufSurfForward<CR>
-nmap <silent> <leader>- :b#<CR>
+nmap <silent> <leader>B :BufSurfForward<CR>
+nmap <silent> <leader>, :b#<CR>
 
 " Cycle through buffers
 " nnoremap <Tab> :bnext<CR>
@@ -408,3 +417,6 @@ let g:SingleCompile_showquickfixiferror = 1
 let g:SingleCompile_silentcompileifshowquickfix = 1
 let g:SingleCompile_showresultafterrun = 0
 
+
+" Save as root
+cmap w!! w !sudo tee % >/dev/null
