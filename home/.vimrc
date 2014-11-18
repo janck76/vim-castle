@@ -67,6 +67,9 @@ Plugin 'tpope/vim-fugitive'
 " vim-bufsurf
 Plugin 'ton/vim-bufsurf'
 
+" Comment out stuff
+Plugin 'tpope/vim-commentary'
+
 " vim-xkbswitch 
 " Dependency: xkb-switch
 " Plugin 'lyokha/vim-xkbswitch'
@@ -107,6 +110,10 @@ set backspace=indent,eol,start
 
 set number
 
+" zsh lignende autocomplete
+set wildmenu
+set wildmode=full
+
 " Change leader from deafult \ to ,
 let mapleader=","
 noremap ø ;
@@ -117,7 +124,7 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
+set history=200		" keep 200 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
