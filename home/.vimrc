@@ -417,3 +417,6 @@ let g:SingleCompile_showquickfixiferror = 1
 let g:SingleCompile_silentcompileifshowquickfix = 1
 let g:SingleCompile_showresultafterrun = 0
 
+
+" Save as root
+cmap w!! w !sudo tee % >/dev/null
