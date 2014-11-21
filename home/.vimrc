@@ -119,6 +119,10 @@ let mapleader=","
 noremap ø ;
 noremap Ø ,
 
+" Remap automatic marks prefix ` 
+noremap æ `
+
+
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
@@ -420,3 +424,11 @@ let g:SingleCompile_showresultafterrun = 0
 
 " Save as root
 cmap w!! w !sudo tee % >/dev/null
+
+" Easy expansion of Active File directory
+cnoremap <expr> %%getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Set search path
+set path+=~/howto/**
+
+
