@@ -70,6 +70,23 @@ Plugin 'ton/vim-bufsurf'
 " Comment out stuff
 Plugin 'tpope/vim-commentary'
 
+" Rubocop 
+Plugin 'ngmy/vim-rubocop'
+
+" Ack - search tool for vim
+" ?    a quick summary of these keys, repeat to close
+" o    to open (same as Enter)
+" O    to open and close the quickfix window
+" go   to preview file, open but maintain focus on ack.vim results
+" t    to open in new tab
+" T    to open in new tab without moving to it
+" h    to open in horizontal split
+" H    to open in horizontal split, keeping focus on the results
+" v    to open in vertical split
+" gv   to open in vertical split, keeping focus on the results
+" q    to close the quickfix window
+Plugin 'mileszs/ack.vim'
+
 " vim-xkbswitch 
 " Dependency: xkb-switch
 " Plugin 'lyokha/vim-xkbswitch'
@@ -121,7 +138,10 @@ noremap Ø ,
 
 " Remap automatic marks prefix ` 
 noremap æ `
+noremap Æ ``
 
+" Operation pending mode
+" onoremap ø ;
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -260,8 +280,9 @@ vmap <tab> >gv
 vmap <s-tab> <gv
 
 " make tab in normal mode ident code
-nmap <tab> I<tab><esc>
-nmap <s-tab> ^i<bs><esc>
+" Da funket ikke <C-I> for jumping
+" nmap <tab> I<tab><esc>
+" nmap <s-tab> ^i<bs><esc>
 
 " A more informative status line
 :set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
