@@ -87,6 +87,22 @@ Plugin 'ngmy/vim-rubocop'
 " q    to close the quickfix window
 Plugin 'mileszs/ack.vim'
 
+
+" vim-airline
+Plugin 'bling/vim-airline'
+
+" vim-tmux-navigator
+Plugin 'christoomey/vim-tmux-navigator'
+
+" Precision colorscheme for the vim text editor
+Plugin 'altercation/vim-colors-solarized'
+
+" Simple tmux statusline generator with support for powerline symbols and
+" statusline / airline / lightline integration
+Plugin 'edkolev/tmuxline.vim'
+
+"
+"
 " vim-xkbswitch 
 " Dependency: xkb-switch
 " Plugin 'lyokha/vim-xkbswitch'
@@ -379,7 +395,10 @@ map <C-c> "+y<CR>
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized' 
 " Disable autolasting av vim-airline overstyring av tmuxline
-let g:airline#extensions#tmuxline#enabled = 0
+" let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#quickfix#enabled = 0
+let g:airline#extensions#netrw#enabled = 0
+"let g:airline_extensions = []
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
