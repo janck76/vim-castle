@@ -101,6 +101,11 @@ Plugin 'altercation/vim-colors-solarized'
 " statusline / airline / lightline integration
 Plugin 'edkolev/tmuxline.vim'
 
+" Copy current file path to clipboard
+" :CopyPath - Copy full path to clipboard
+" :CopyFileName - Copy filename to clipboard
+Plugin 'vim-scripts/copypath.vim'
+
 "
 "
 " vim-xkbswitch 
