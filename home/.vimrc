@@ -73,6 +73,9 @@ Plugin 'tpope/vim-commentary'
 " Rubocop 
 Plugin 'ngmy/vim-rubocop'
 
+" vim-rails
+Plugin 'tpope/vim-rails'
+
 " Ack - search tool for vim
 " ?    a quick summary of these keys, repeat to close
 " o    to open (same as Enter)
@@ -236,6 +239,11 @@ if has("autocmd")
   " Tab-stops for ruby
   autocmd FileType ruby setlocal tabstop=2
   autocmd FileType ruby setlocal shiftwidth=2
+  autocmd FileType eruby setlocal tabstop=2
+  autocmd FileType eruby setlocal shiftwidth=2
+  " Tab-stops for html
+  autocmd FileType html setlocal tabstop=2
+  autocmd FileType html setlocal shiftwidth=2
 
   " XML-folding
   " let g:xml_syntax_folding=1
@@ -252,6 +260,10 @@ endif " has("autocmd")
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
     \ | wincmd p | diffthis
+endif
+
+if !exists(":DiffColors")
+  command DiffColors highlight DiffAdd | highlight DiffChange | highlight DiffDelete | highlight DiffText
 endif
 
 " Jan C settings
@@ -346,11 +358,20 @@ map gf :new <cfile><CR>
 "
 " -----------------------------------------------------------------------------
 if &diff
-    noremap <space> ]cz.
-    noremap <M-space> [cz.
+    noremap <leader>n ]cz.
+    noremap <leader>N [cz.
+    " noremap <M-space> [cz.
     noremap =8 :vertical resize 82<CR>
-    noremap =0 :execute "vertical resize " . (&columns+1)/2<CR>
-    noremap <C-L> :diffupdate<CR><C-L>
+    inoremap =0 :execute "vertical resize " . (&columns+1)/2<CR>
+    " noremap <C-L> :diffupdate<CR><C-L>
+    nmap <space> :diffupdate<CR>
+    " For Fugitive :Gdiff
+    " nmap <silent> <leader>2 :diffget //2 \|diffupdate<CR>
+    " nmap <silent> <leader>3 :diffget //3 \|diffupdate<CR>
+    " For git 'standard' mergetool
+    nmap <silent> <leader>l :diffget _LOCAL_ \|diffupdate<CR>
+    nmap <silent> <leader>r :diffget _REMOTE_ \|diffupdate<CR>
+    nmap <silent> <leader>h :!howto vim/vimdiff.txt<CR>
 endif
 
 set guioptions-=T
@@ -424,27 +445,27 @@ nmap <silent> <leader>, :b#<CR>
 
 
 
-" Python-mode settings 
-" Turn on the whole plugin
-let g:pymode = 1
-" Turn off plugin's warnings
-let g:pymode_warnings = 1
-" Add paths to sys.path
-" Value is list of path's strings
-let g:pymode_paths = []
+" " Python-mode settings 
+" " Turn on the whole plugin
+" let g:pymode = 1
+" " Turn off plugin's warnings
+" let g:pymode_warnings = 1
+" " Add paths to sys.path
+" " Value is list of path's strings
+" let g:pymode_paths = []
 
-" Trim unused white spaces on save
-let g:pymode_trim_white_spaces = 1
+" " Trim unused white spaces on save
+" let g:pymode_trim_white_spaces = 1
 
-" Setup default pyhton options
-let g:pyhton_options = 1
+" " Setup default pyhton options
+" let g:pyhton_options = 1
 
-" Setup max line length
-let g:pyhton_options_max_line_length = 79
+" " Setup max line length
+" let g:pyhton_options_max_line_length = 79
 
-" Setup pymode quickfix window
-let g:pymode_quickfix_minheight = 3
-let g:pymode_quickfix_maxheight = 6
+" " Setup pymode quickfix window
+" let g:pymode_quickfix_minheight = 3
+" let g:pymode_quickfix_maxheight = 6
 
 
 " Trigger configuration. Do not use <tab> if you use
@@ -476,4 +497,5 @@ cnoremap <expr> %%getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Set search path
 set path+=~/howto/**
 
-
+" Syntax highlight for Template Toolkit filetypes
+au BufNewFile,BufRead *.tt2 set filetype=tt2html
