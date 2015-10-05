@@ -109,6 +109,22 @@ Plugin 'edkolev/tmuxline.vim'
 " :CopyFileName - Copy filename to clipboard
 Plugin 'vim-scripts/copypath.vim'
 
+" Automatically discover and properly update ctags files on save 
+Plugin 'craigemery/vim-autotag'
+
+" The 'Tag List' plugin is a source code browser plugin for Vim and
+" provides an overview of the structure of source code files and allows
+" you to efficiently browse through source code files for different
+" programming languages.
+Plugin 'taglist.vim'
+
+" vim-textobj-user - Create your own text objects
+Plugin 'kana/vim-textobj-user'
+
+" A custom text object for selecting ruby blocks 
+Plugin 'nelstrom/vim-textobj-rubyblock'
+ 
+
 "
 "
 " vim-xkbswitch 
@@ -245,9 +261,14 @@ if has("autocmd")
   autocmd FileType html setlocal tabstop=2
   autocmd FileType html setlocal shiftwidth=2
 
-  " XML-folding
-  " let g:xml_syntax_folding=1
-  " au FileType xml setlocal foldmethod=syntax
+ fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+  endfun
+
+  autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 else
 
   set autoindent		" always set autoindenting on
@@ -499,3 +520,5 @@ set path+=~/howto/**
 
 " Syntax highlight for Template Toolkit filetypes
 au BufNewFile,BufRead *.tt2 set filetype=tt2html
+
+runtime macros/matchit.vim
