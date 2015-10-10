@@ -252,11 +252,7 @@ if has("autocmd")
   " Compiler plugins
   autocmd FileType ruby compiler ruby
 
-  " Tab-stops for ruby
-  autocmd FileType ruby setlocal tabstop=2
-  autocmd FileType ruby setlocal shiftwidth=2
-  autocmd FileType eruby setlocal tabstop=2
-  autocmd FileType eruby setlocal shiftwidth=2
+  " Tab-stops for ruby - se ~/.vim/after/ftplugin/ruby.vim
   " Tab-stops for html
   autocmd FileType html setlocal tabstop=2
   autocmd FileType html setlocal shiftwidth=2
