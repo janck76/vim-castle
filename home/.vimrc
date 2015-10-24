@@ -218,6 +218,8 @@ endif
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
+  " Switch to old regex engine to prevent slowness
+  set re=1
   set hlsearch
 endif
 
