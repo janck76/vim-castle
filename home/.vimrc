@@ -37,7 +37,7 @@ Plugin 'honza/vim-snippets'
 " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
 Plugin 'klen/python-mode'
 
-" BASH IDE -- Write and run BASH-scripts using menus and hotkeys. 
+" BASH IDE -- Write and run BASH-scripts using menus and hotkeys.
 Plugin 'bash-support.vim'
 
 " Perl-IDE Using perl-support Plugin"
@@ -52,7 +52,7 @@ Plugin 'ZoomWin'
 " Surround.vim is all about surroundings: parentheses, brackets, quotes, XML tags, and more.  The plugin provides mappings to easily delete, change and add such surroundings in pairs
 Plugin 'Surround.vim'
 
-" SingleCompile : Make it more convenient to compile or run a single source file. 
+" SingleCompile : Make it more convenient to compile or run a single source file.
 Plugin 'xuhdev/SingleCompile'
 
 " ruby-vim
@@ -70,7 +70,7 @@ Plugin 'ton/vim-bufsurf'
 " Comment out stuff
 Plugin 'tpope/vim-commentary'
 
-" Rubocop 
+" Rubocop
 Plugin 'ngmy/vim-rubocop'
 
 " vim-rails
@@ -109,7 +109,7 @@ Plugin 'edkolev/tmuxline.vim'
 " :CopyFileName - Copy filename to clipboard
 Plugin 'vim-scripts/copypath.vim'
 
-" Automatically discover and properly update ctags files on save 
+" Automatically discover and properly update ctags files on save
 Plugin 'craigemery/vim-autotag'
 
 " The 'Tag List' plugin is a source code browser plugin for Vim and
@@ -121,13 +121,13 @@ Plugin 'taglist.vim'
 " vim-textobj-user - Create your own text objects
 Plugin 'kana/vim-textobj-user'
 
-" A custom text object for selecting ruby blocks 
+" A custom text object for selecting ruby blocks
 Plugin 'nelstrom/vim-textobj-rubyblock'
- 
+
 
 "
 "
-" vim-xkbswitch 
+" vim-xkbswitch
 " Dependency: xkb-switch
 " Plugin 'lyokha/vim-xkbswitch'
 
@@ -176,7 +176,7 @@ let mapleader=","
 noremap ø ;
 noremap Ø ,
 
-" Remap automatic marks prefix ` 
+" Remap automatic marks prefix `
 noremap æ `
 noremap Æ ``
 
@@ -250,7 +250,7 @@ if has("autocmd")
     \ endif
 
   augroup END
-  
+
   " Compiler plugins
   autocmd FileType ruby compiler ruby
 
@@ -266,7 +266,7 @@ if has("autocmd")
     call cursor(l, c)
   endfun
 
-  autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+  autocmd FileType c,cpp,java,javascript,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 else
 
   set autoindent		" always set autoindenting on
@@ -300,7 +300,7 @@ endif
 
 try
     " http://ethanschoonover.com/solarized/vim-colors-solarized
-    if !has('gui_running') 
+    if !has('gui_running')
         set t_Co=16
         let g:CSApprox_loaded=0
     endif
@@ -372,7 +372,7 @@ map gf :new <cfile><CR>
 " Shift+Alt Gr  - previous diff
 " =8            - resize the current window to 80 columns (I like 80 columncode).
 " =0            - resize the left and right sides to be equally sized.
-" Control-L     - refresh the screen as well as refresh the diffs, incase you have 
+" Control-L     - refresh the screen as well as refresh the diffs, incase you have
 "                 been making modifications.
 "
 " -----------------------------------------------------------------------------
@@ -438,7 +438,7 @@ map <C-c> "+y<CR>
 
 " vim-airline powerline fonts integration
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized' 
+let g:airline_theme = 'solarized'
 " Disable autolasting av vim-airline overstyring av tmuxline
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline#extensions#quickfix#enabled = 0
@@ -464,7 +464,7 @@ nmap <silent> <leader>, :b#<CR>
 
 
 
-" " Python-mode settings 
+" " Python-mode settings
 " " Turn on the whole plugin
 " let g:pymode = 1
 " " Turn off plugin's warnings
@@ -520,3 +520,6 @@ set path+=~/howto/**
 au BufNewFile,BufRead *.tt2 set filetype=tt2html
 
 runtime macros/matchit.vim
+
+" remove trailing spaces with F5
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
