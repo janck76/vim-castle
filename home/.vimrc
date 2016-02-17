@@ -92,7 +92,10 @@ Plugin 'mileszs/ack.vim'
 
 
 " vim-airline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+
+" vim-airline themes
+Plugin 'vim-airline/vim-airline-themes'
 
 " vim-tmux-navigator
 Plugin 'christoomey/vim-tmux-navigator'
