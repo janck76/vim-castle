@@ -127,6 +127,8 @@ Plugin 'kana/vim-textobj-user'
 " A custom text object for selecting ruby blocks
 Plugin 'nelstrom/vim-textobj-rubyblock'
 
+" Simple Vim template plugin
+Plugin 'aperezdc/vim-template'
 
 "
 "
