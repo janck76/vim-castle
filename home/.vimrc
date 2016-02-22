@@ -531,3 +531,7 @@ runtime macros/matchit.vim
 
 " remove trailing spaces with F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Search path for Templates (plugin vim-templates)
+let g:templates_directory = ['~/.vim/Templates']
+
