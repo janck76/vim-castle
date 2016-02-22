@@ -130,6 +130,9 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 " Simple Vim template plugin
 Plugin 'aperezdc/vim-template'
 
+" UltiSnips vim-es6 snippets
+Plugin 'isRuslan/vim-es6'
+
 "
 "
 " vim-xkbswitch
