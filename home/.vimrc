@@ -535,3 +535,14 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Search path for Templates (plugin vim-templates)
 let g:templates_directory = ['~/.vim/Templates']
 
+nmap <F12> :call ToggleFiletype('javascript')<cr>
+
+function! ToggleFiletype(type)
+    if &filetype ==? a:type
+        filetype detect
+    else
+        " virker ikke ...
+        " set filetype=a:type
+        execute 'set filetype=' . a:type
+    endif
+endfunction
