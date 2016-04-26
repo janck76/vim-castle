@@ -38,10 +38,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'klen/python-mode'
 
 " BASH IDE -- Write and run BASH-scripts using menus and hotkeys.
-Plugin 'bash-support.vim'
+" Plugin 'bash-support.vim'
 
 " Perl-IDE Using perl-support Plugin"
-Plugin 'perl-support.vim'
+" Plugin 'perl-support.vim'
 
 " ZoomWindow - zoom into and out of a window
 Plugin 'ZoomWin'
@@ -132,6 +132,18 @@ Plugin 'aperezdc/vim-template'
 
 " UltiSnips vim-es6 snippets
 Plugin 'isRuslan/vim-es6'
+
+" A Vim plugin that always highlights the enclosing html/xml tags
+Plugin 'Valloric/MatchTagAlways'
+
+" Vim Pug (formerly Jade) template engine syntax highlighting and indention
+Plugin 'digitaltoad/vim-pug'
+
+" Provides Tern-based JavaScript editing support.
+Plugin 'ternjs/tern_for_vim'
+
+" A code-completion engine for Vim http://valloric.github.io/YouCompleteMe/
+Plugin 'Valloric/YouCompleteMe'
 
 "
 "
@@ -487,6 +499,7 @@ nmap <silent> <leader>, :b#<CR>
 " " Setup default pyhton options
 " let g:pyhton_options = 1
 
+
 " " Setup max line length
 " let g:pyhton_options_max_line_length = 79
 
@@ -497,7 +510,7 @@ nmap <silent> <leader>, :b#<CR>
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 " Funker kun i gvim av en eller annen grunn...
 "let g:UltiSnipsListSnippets="<tab-c>"
 let g:UltiSnipsListSnippets="<F3>"
@@ -532,9 +545,6 @@ runtime macros/matchit.vim
 " remove trailing spaces with F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" Search path for Templates (plugin vim-templates)
-let g:templates_directory = ['~/.vim/Templates']
-
 nmap <F12> :call ToggleFiletype('javascript')<cr>
 
 function! ToggleFiletype(type)
@@ -546,3 +556,8 @@ function! ToggleFiletype(type)
         execute 'set filetype=' . a:type
     endif
 endfunction
+
+" vim-template config
+let g:templates_directory=["$HOME/.vim/Templates"]
+let g:email="janck76@gmail.com"
+let g:user="Jan C Kaldestad"

@@ -1,0 +1,32 @@
+priority -50
+
+# b - Beginning of line
+# i - In-word expansion
+snippet log "console.log (js)" b
+console.log(${1});
+endsnippet
+
+snippet $ "interpolate var" i
+${${1:var}}
+endsnippet
+
+snippet ts "template string" i
+\`${1}\`
+endsnippet
+
+snippet = "===" i
+=== 
+endsnippet
+
+snippet oc "Object.create" i
+Object.create( ${1:delegateObj} );
+endsnippet
+
+snippet strict "use strict" b
+'use strict';
+endsnippet
+
+snippet rq "require" i
+require('${1}');
+endsnippet
+

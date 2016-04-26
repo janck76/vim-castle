@@ -1,0 +1,11 @@
+priority -50
+
+snippet befm "before each module (js)" b
+beforeEach(module('${1:name}'));
+endsnippet
+
+snippet befi "berfore each inject (js)" b
+beforeEach(inject(function() {
+	$0
+}));
+endsnippet
