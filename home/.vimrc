@@ -558,6 +558,10 @@ function! ToggleFiletype(type)
 endfunction
 
 " vim-template config
+let hostname=substitute(system('hostname'), '\n', '', '')
 let g:templates_directory=["$HOME/.vim/Templates"]
-let g:email="janck76@gmail.com"
-let g:user="Jan C Kaldestad"
+if hostname == 'dt33141'
+    let g:email="jan.kaldestad@bergen.kommune.no"
+else
+    let g:email="janck76@gmail.com"
+endif
