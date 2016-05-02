@@ -146,8 +146,11 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
-" http://kien.github.io/ctrlp.vim/
-Plugin 'kien/ctrlp.vim'
+" http://ctrlpvim.github.io/ctrlp.vim/
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" JavaScript syntax highlighting and improved indentation.
+Plugin 'pangloss/vim-javascript'
 
 "
 "
