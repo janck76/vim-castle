@@ -152,6 +152,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " JavaScript syntax highlighting and improved indentation.
 Plugin 'pangloss/vim-javascript'
 
+" Syntastic is a syntax checking plugin for Vim that runs files through
+" external syntax checkers and displays any resulting errors to the user. 
+Plugin 'scrooloose/syntastic'
 "
 "
 " vim-xkbswitch
@@ -572,3 +575,16 @@ if hostname == 'dt33141'
 else
     let g:email="janck76@gmail.com"
 endif
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ['perl', 'perlcritic'] 

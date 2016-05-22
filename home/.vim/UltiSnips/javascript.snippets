@@ -30,3 +30,74 @@ snippet rq "require" i
 require('${1}');
 endsnippet
 
+snippet ( "parenteser" i
+(${1})
+endsnippet
+
+snippet (; "parenteser" i
+(${1});
+endsnippet
+
+# async snippets
+snippet aser "async.serires" b
+async.series([
+  function(callback) {
+    // TODO
+    callback(); // task callback
+  },
+
+  function(callback) {
+    // TODO
+     callback();
+   }
+},
+],
+function(err, results) {
+  if(err) final_callback(err);
+  final_callback();
+});
+endsnippet
+
+snippet apar "async.parallel" b
+async.series([
+  function(callback) {
+    // TODO
+    callback(); // task callback
+  },
+
+  function(callback) {
+    // TODO
+     callback();
+   }
+},
+],
+function(err, results) {
+  if(err) final_callback(err);
+  final_callback();
+});
+endsnippet
+
+snippet aeach "async.each" b
+async.each(${1:coll}, function(${2:item}, callback) {
+
+  // Perform operation on item here.
+	if(error) callback(error);
+  if( file.length > 32 ) {
+    console.log('This file name is too long');
+    callback('File name too long');
+  } else {
+    // Do work to process file here
+    console.log('File processed');
+    callback();
+  }
+}, function(err){
+    // if any of the file processing produced an error, err would equal that error
+    if( err ) {
+      // One of the iterations produced an error.
+      // All processing will now stop.
+      console.log('A file failed to process');
+    } else {
+      console.log('All files have been processed successfully');
+    }
+});
+endsnippet
