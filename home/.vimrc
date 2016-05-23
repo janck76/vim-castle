@@ -153,7 +153,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 
 " Syntastic is a syntax checking plugin for Vim that runs files through
-" external syntax checkers and displays any resulting errors to the user. 
+" external syntax checkers and displays any resulting errors to the user.
 Plugin 'scrooloose/syntastic'
 "
 "
@@ -587,4 +587,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ['perl', 'perlcritic'] 
+let g:syntastic_perl_checkers = ['perl']
+let g:syntastic_javascript_checkers = ['eslint']
