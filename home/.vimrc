@@ -92,7 +92,11 @@ Plugin 'mileszs/ack.vim'
 
 
 " vim-airline
-Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline'
+
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim
+" http://ctrlpvim.github.io/ctrlp.vim/
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " vim-airline themes
 Plugin 'vim-airline/vim-airline-themes'
@@ -144,10 +148,6 @@ Plugin 'ternjs/tern_for_vim'
 
 " A code-completion engine for Vim http://valloric.github.io/YouCompleteMe/
 Plugin 'Valloric/YouCompleteMe'
-
-" Full path fuzzy file, buffer, mru, tag, ... finder for Vim
-" http://ctrlpvim.github.io/ctrlp.vim/
-Plugin 'ctrlpvim/ctrlp.vim'
 
 " JavaScript syntax highlighting and improved indentation.
 Plugin 'pangloss/vim-javascript'
