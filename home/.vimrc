@@ -161,6 +161,9 @@ Plugin 'scrooloose/syntastic'
 " Dependency: xkb-switch
 " Plugin 'lyokha/vim-xkbswitch'
 
+" Plugin for transparent editing of gpg encrypted files
+Plugin 'jamessan/vim-gnupg'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
