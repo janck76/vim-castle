@@ -299,7 +299,7 @@ if has("autocmd")
     call cursor(l, c)
   endfun
 
-  autocmd FileType c,cpp,java,javascript,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+  autocmd FileType c,cpp,groovy,java,javascript,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 else
 
   set autoindent		" always set autoindenting on
@@ -592,3 +592,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perl']
 let g:syntastic_javascript_checkers = ['eslint']
+
+" Pretty JSON
+com! FormatJSON %!python -m json.tool
