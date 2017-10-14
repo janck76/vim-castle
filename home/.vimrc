@@ -552,6 +552,7 @@ set path+=~/howto/**
 
 " Syntax highlight for Template Toolkit filetypes
 au BufNewFile,BufRead *.tt2 set filetype=tt2html
+au BufNewFile,BufRead *.tt set filetype=tt2html
 
 runtime macros/matchit.vim
 
