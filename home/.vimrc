@@ -92,7 +92,7 @@ Plugin 'mileszs/ack.vim'
 
 
 " vim-airline
-" Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline'
 
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
 " http://ctrlpvim.github.io/ctrlp.vim/
@@ -154,7 +154,7 @@ Plugin 'pangloss/vim-javascript'
 
 " Syntastic is a syntax checking plugin for Vim that runs files through
 " external syntax checkers and displays any resulting errors to the user.
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 "
 "
 " vim-xkbswitch
@@ -163,6 +163,12 @@ Plugin 'scrooloose/syntastic'
 
 " Plugin for transparent editing of gpg encrypted files
 Plugin 'jamessan/vim-gnupg'
+
+" NERDTress
+Plugin 'scrooloose/nerdtree'
+
+" Asynchronous Lint Engine
+Plugin 'w0rp/ale'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -554,12 +560,15 @@ set path+=~/howto/**
 au BufNewFile,BufRead *.tt2 set filetype=tt2html
 au BufNewFile,BufRead *.tt set filetype=tt2html
 
+au BufNewFile,BufRead *.vue set filetype=javascript
+
 runtime macros/matchit.vim
 
 " remove trailing spaces with F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 nmap <F12> :call ToggleFiletype('javascript')<cr>
+nmap <s-F12> :call ToggleFiletype('html')<cr>
 
 function! ToggleFiletype(type)
     if &filetype ==? a:type
@@ -581,18 +590,23 @@ else
 endif
 
 " Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" 
+" let g:syntastic_enable_perl_checker = 1
+" let g:syntastic_perl_checkers = ['perl']
+" let g:syntastic_javascript_checkers = ['eslint']
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ['perl']
-let g:syntastic_javascript_checkers = ['eslint']
+" ALE config
+" Keymappings for moving between warnings/errors
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Pretty JSON
 com! FormatJSON %!python -m json.tool
